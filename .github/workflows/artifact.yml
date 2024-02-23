@@ -25,12 +25,10 @@ jobs:
     needs: [build]
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-      
-    - uses: actions/download-artifact@v2
+    - name: download the text file    
+      uses: actions/download-artifact@v2
       with:
         name: hello-artifact
         path: ./artifacts
-    - name: display
+    - name: display the content of text file
       run: cat ./artifacts/hello.txt
